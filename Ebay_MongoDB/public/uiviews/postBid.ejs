@@ -1,0 +1,70 @@
+<nav class="navbar navbar-default">
+	 		<div class="container-fluid">
+	    		<!-- Brand and toggle get grouped for better mobile display -->
+	    		<div class="navbar-header">
+		      		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		        		<span class="sr-only">Toggle navigation</span>
+		        		<span class="icon-bar"></span>
+		        		<span class="icon-bar"></span>
+		        		<span class="icon-bar"></span>
+		      		</button>
+		      		<a class="navbar-brand" href="#">Hi</a><p class="navbar-brand">{{message}}!</p>
+	    		</div>
+		        <!-- Collect the nav links, forms, and other content for toggling -->
+			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			       	<ul class="nav navbar-nav navbar-right">
+			       		<li><a ui-sref="home"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+			       		<li><a ui-sref="cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart</a></li>
+				        <li class="dropdown">
+				        	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i> Account<span class="caret"></span></a>
+				          	<ul class="dropdown-menu">
+				            	<li><a ui-sref="viewProfile">Profile</a></li>
+				            	<li><a ui-sref="productAdvt">Sell Product</a></li>
+				            	<li><a ui-sref="myOrders">My Orders</a></li>
+				            	<li><a ui-sref="myPosted">My Posted</a></li>
+				            	<li><a ui-sref="myBid">My Bids</a></li>
+				            	<li role="separator" class="divider"></li>
+				            	<form>
+				            	<li><a class="btn btn-primary btn-block" ui-sref="logout">Logout</a></li>
+				            	</form>
+				          	</ul>
+				        </li>
+				     </ul>
+				</div><!-- /.navbar-collapse -->
+	  		</div><!-- /.container-fluid -->
+		</nav>
+		
+	
+<strong>{{error}}</strong>
+
+<div class="container>
+	<div class="row" ng-repeat="item in items">
+	  <div class="col-sm-6 col-md-4">
+	    <div class="thumbnail">
+	      <div class="caption">
+	      	<h3>{{item.name}}</h3>
+	        <table class="table table-bordered" style = "table-layout: fixed">
+	          <thead>
+	            <tr>
+	              <th>Item Description</th>
+	              <th>Base Price</th>
+	              <th>Quantity</th>
+	              <th>Seller Information</th>
+	            </tr>
+	          </thead>
+	          <tbody>
+	            <tr>
+	              <td>{{item.description}}</td>
+	              <td>${{item.price}}</td>
+	              <td>{{item.quantity}}</td>
+	              <td>{{item.sellerInfo}}</td>
+	            </tr>
+	          </tbody>
+	        </table>
+	        Bid Amount ($):<input class="form-control" type="text" ng-model="bidAmount"> 
+	        <button class="btn btn-primary" type="button" ng-click="placeBid(item.id,bidAmount)">Place Bid</button>
+	      </div>
+	    </div>
+	  </div>    
+	</div>
+</div>	

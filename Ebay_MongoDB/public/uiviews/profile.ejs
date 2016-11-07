@@ -1,0 +1,100 @@
+<nav class="navbar navbar-default">
+	 		<div class="container-fluid">
+	    		<!-- Brand and toggle get grouped for better mobile display -->
+	    		<div class="navbar-header">
+		      		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		        		<span class="sr-only">Toggle navigation</span>
+		        		<span class="icon-bar"></span>
+		        		<span class="icon-bar"></span>
+		        		<span class="icon-bar"></span>
+		      		</button>
+		      		<a class="navbar-brand" href="#">Hi</a><p class="navbar-brand">{{message}}!</p>
+	    		</div>
+		        <!-- Collect the nav links, forms, and other content for toggling -->
+			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			       	<ul class="nav navbar-nav navbar-right">
+			       		<li><a ui-sref="home"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+			       		<li><a ui-sref="cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart</a></li>
+				        <li class="dropdown">
+				        	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i> Account<span class="caret"></span></a>
+				          	<ul class="dropdown-menu">
+				            	
+				            	<li><a ui-sref="productAdvt">Sell Product</a></li>
+				            	<li><a ui-sref="myOrders">My Orders</a></li>
+				            	<li><a ui-sref="myPosted">My Posted</a></li>
+				            	<li><a ui-sref="myBid">My Bids</a></li>
+				            	<li><a ui-sref="postBid">Bid</a></li>
+				            	<li role="separator" class="divider"></li>
+				            	<form>
+				            	<li><a class="btn btn-primary btn-block" ui-sref="logout">Logout</a></li>
+				            	</form>
+				          	</ul>
+				        </li>
+				     </ul>
+				</div><!-- /.navbar-collapse -->
+	  		</div><!-- /.container-fluid -->
+		</nav>
+
+<div class="container">
+    <h1>Edit Profile</h1>
+  	<hr>
+	<div class="row">
+      <!-- left column -->
+      <div class="col-md-3">
+        <div class="text-center" >
+          <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
+        </div>
+      </div>
+      
+      <!-- edit form column -->
+      <div class="col-md-9 personal-info">
+        <div class="alert alert-info alert-dismissable">
+          <a class="panel-close close" data-dismiss="alert" ng-model="message">{{message}}</a> 
+          <i class="fa fa-coffee"></i>
+        </div>
+        <h3>Personal info</h3>
+        
+        <form class="form-horizontal" role="form">
+          <div class="form-group">
+            <label class="col-lg-3 control-label">First name:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" ng-model="fname">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Last name:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" ng-model="lname">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">DOB:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" placeholder="mm/dd/yyyy" ng-model="dob">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Contact Number</label>
+            <div class="col-md-8">
+              <input class="form-control" type="text" placeholder="Cell/Phone Number" ng-model="cnumber">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Mailing Address</label>
+            <div class="col-md-8">
+              <input class="form-control" type="text" placeholder="Street,Zipcode,City,State,Country" ng-model="address">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label"></label>
+            <div class="col-md-8">
+              <button class="btn btn-primary" ng-click="submit(fname,lname,dob,cnumber,address)">Save Changes</button>
+              <span></span>
+              <a class="btn btn-default" ui-sref="viewProfile">Cancel</a>
+            </div>
+          </div>
+        </form>
+      </div>
+  </div>
+  <hr>
+</div>

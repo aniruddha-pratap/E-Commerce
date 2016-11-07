@@ -1,0 +1,61 @@
+<div class="user">
+  <div class="container-fluid text-center">
+    <div class="row">
+      <div class="col-md-4">
+      </div>
+      <div class="col-md-4">
+        <div>
+          <ul class="nav nav-tabs">
+          <li class=" tabs-style active widthAlign"><a data-toggle="tab" href="#signin"><span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span>Sign in</a></li>
+          <li class=" tabs-style widthAlign" ><a data-toggle="tab" href="#register">
+          <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>Register</a></li>
+          </ul>
+
+          <div class="tab-content">
+              <div id="signin" class="userSignin tab-pane fade in active">
+                <div>
+                  <form class="form-horizontal">
+                  	<strong>{{errorMessage}}</strong>
+                    <div class="col-sm-12 myAlign">
+                    	<input type="email" class="form-control" placeholder="Username" name = "username" id = "username" ng-model="user" required autofocus>
+                    </div>
+                    <div class="col-sm-12 myAlign">
+                    	<input type="password" class="form-control" placeholder="Password" name = "password" id = "password" ng-model="pass" required>
+                    </div>
+                    <div class="col-sm-12 myAlign">
+                    	<button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="signin(user, pass)">Sign In</button>
+                    </div>
+                  </form>
+                </div>
+            </div>
+
+            <div id="register" class="userRegister tab-pane fade">
+              <div>
+                <form class="form-horizontal">
+                  <strong>{{errorMessage}}</strong>
+                  <div class="col-sm-12 myAlign">
+                  	<input type="email" class="form-control" placeholder="Username" name = "username" id = "username" ng-model= "uname" required>
+                  </div>
+                  <div class="col-sm-12 myAlign">
+                  	<input type="password" class="form-control" placeholder="Password" name = "password" id = "password" ng-model= "pass" required>
+                  </div>
+                  <div class="col-sm-12 myAlign">
+                  <div class="col-sm-6">
+                  	<input type="text" class="form-control" placeholder="First Name" name = "firstname" id = "firstname" ng-model= "fname" required autofocus>
+                  </div>
+                  <div class="col-sm-6">
+                  	<input type="text" class="form-control" placeholder="Last Name" name = "lastname" id = "lastname" ng-model= "lname" required>
+                  </div>
+                  </div>
+                  <div class="col-sm-12 myAlign">
+                  	<button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="signup(fname,lname,uname,pass)">Register</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

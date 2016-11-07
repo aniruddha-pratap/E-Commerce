@@ -1,0 +1,62 @@
+<nav class="navbar navbar-default">
+	 		<div class="container-fluid">
+	    		<!-- Brand and toggle get grouped for better mobile display -->
+	    		<div class="navbar-header">
+		      		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		        		<span class="sr-only">Toggle navigation</span>
+		        		<span class="icon-bar"></span>
+		        		<span class="icon-bar"></span>
+		        		<span class="icon-bar"></span>
+		      		</button>
+		      		<a class="navbar-brand" href="#">Hi</a><p class="navbar-brand">{{message}}!</p>
+	    		</div>
+		        <!-- Collect the nav links, forms, and other content for toggling -->
+			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			       	<ul class="nav navbar-nav navbar-right">
+			       		<li><a ui-sref="home"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+				        <li class="dropdown">
+				        	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i> Account<span class="caret"></span></a>
+				          	<ul class="dropdown-menu">
+				            	<li><a ui-sref="viewProfile">Profile</a></li>
+				            	<li><a ui-sref="productAdvt">Sell Product</a></li>
+				            	<li><a ui-sref="myOrders">My Orders</a></li>
+				            	<li><a ui-sref="myPosted">My Posted</a></li>
+				            	<li><a ui-sref="postBid">Bid</a></li>
+				            	<li><a ui-sref="myBid">My Bids</a></li>
+				            	<li role="separator" class="divider"></li>
+				            	<form>
+				            	<li><a class="btn btn-primary btn-block" ui-sref="logout">Logout</a></li>
+				            	</form>
+				          	</ul>
+				        </li>
+				     </ul>
+				</div><!-- /.navbar-collapse -->
+	  		</div><!-- /.container-fluid -->
+		</nav>
+
+	<div class="row" ng-repeat = "item in items">
+			<div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+				<ul class="list-group">
+					<li class="list-group-item">
+						<span class="badge" ng-model="qty">Quantity: {{item.quantity}}</span>
+						<strong ng-model="name">{{item.name}}</strong>
+						<span class="label label-success" ng-model="price"><i class="fa fa-usd" aria-hidden="true"></i>{{item.price}} per item</span>
+						<div class="btn-group">
+							<button class="btn btn-primary btn-xs" type="button" ng-click="addProduct(item.id)">Add</button><button class="btn btn-primary btn-xs" type="button" ng-click="removeProduct(item.id)">Remove</button>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+				<strong>Total: <i class="fa fa-usd" aria-hidden="true"></i>{{totalPrice}}</strong>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+				<button class="btn btn-success" type="button" ng-click="checkout()"><strong>Checkout</strong></button>
+			</div>
+		</div>

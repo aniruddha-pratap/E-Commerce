@@ -1,0 +1,63 @@
+<nav class="navbar navbar-default">
+	 		<div class="container-fluid">
+	    		<!-- Brand and toggle get grouped for better mobile display -->
+	    		<div class="navbar-header">
+		      		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		        		<span class="sr-only">Toggle navigation</span>
+		        		<span class="icon-bar"></span>
+		        		<span class="icon-bar"></span>
+		        		<span class="icon-bar"></span>
+		      		</button>
+		      		<a class="navbar-brand" href="#">Hi</a><p class="navbar-brand">{{message}}!</p>
+	    		</div>
+		        <!-- Collect the nav links, forms, and other content for toggling -->
+			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			       	<ul class="nav navbar-nav navbar-right">
+			       		<li><a ui-sref="home"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+			       		<li><a ui-sref="cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart</a></li>
+				        <li class="dropdown">
+				        	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i> Account<span class="caret"></span></a>
+				          	<ul class="dropdown-menu">
+				            	<li><a ui-sref="viewProfile">Profile</a></li>
+				            	<li><a ui-sref="productAdvt">Sell Product</a></li>
+				            	<li><a ui-sref="myPosted">My Posted</a></li>
+				            	<li><a ui-sref="postBid">Bid</a></li>
+				            	<li><a ui-sref="myBid">My Bids</a></li>
+				            	<li role="separator" class="divider"></li>
+				            	<form>
+				            	<li><a class="btn btn-primary btn-block" ui-sref="logout">Logout</a></li>
+				            	</form>
+				          	</ul>
+				        </li>
+				     </ul>
+				</div><!-- /.navbar-collapse -->
+	  		</div><!-- /.container-fluid -->
+		</nav>
+
+
+
+<div class="panel panel-info">
+	<!-- Default panel contents -->
+	<div class="panel-heading">My Bids</div>
+	<!-- Table -->
+	<table class="table table-bordered" style = "table-layout: fixed">
+		<thead>
+			<tr>
+				<th>Sr No.</th>
+				<th>Item Name</th>
+				<th>Seller info</th>
+				<th>Bid Price</th>
+				<th>Bidding Date</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="item in items">
+				<td>{{item.serial}}</td>
+				<td>{{item.name}}</td>
+				<td>{{item.sellerInfo}}</td>
+				<td>{{item.bidPrice}}</td>
+				<td>{{item.date}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

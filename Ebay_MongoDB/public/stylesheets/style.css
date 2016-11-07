@@ -1,0 +1,51 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.tabs-style{
+ font-size: 20px;
+}
+
+.user { 
+ background: #f8f8f8 !important;
+    font-family: "Helvetica neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1;
+    height: 650px;
+}
+
+.userSignin{
+ 	background: #fff none repeat scroll 0 0;
+ 	border: 1px solid #ccc;
+    margin: auto;
+    width: 100%;
+    height: 235px;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+.userRegister{
+ 	background: #fff none repeat scroll 0 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin: auto;
+    width: 100%;
+    height: 300px;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+.myAlign{ 
+  	margin-left: auto;
+    margin-right: auto;
+    margin-top: 24px;
+ }
+
+.widthAlign{
+ width: 50%;
+}
